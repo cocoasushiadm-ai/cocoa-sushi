@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --cs-dark:   #1A352E;
+    --cs-forest: #2B5A4D;
+    --cs-medium: #3B7563;
+    --cs-cream:  #F1F0EB;
+    --cs-olive:  #8D9B62;
+    --cs-khaki:  #E0D3AA;
+    --cs-pale:   #E5E1D3;
+    --cs-copper: #9B6234;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-inter), system-ui, sans-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-cs-forest text-cs-cream font-medium px-6 py-3 rounded-xl
+           hover:bg-cs-dark transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border border-cs-forest text-cs-forest px-6 py-3 rounded-xl
+           hover:bg-cs-forest hover:text-cs-cream transition-colors duration-200;
+  }
+  .card {
+    @apply bg-white border border-cs-pale rounded-2xl p-6 shadow-sm;
+  }
+  .input {
+    @apply w-full bg-cs-cream border border-cs-pale rounded-xl px-4 py-3
+           text-cs-dark placeholder-cs-olive/60 outline-none
+           focus:border-cs-medium focus:ring-1 focus:ring-cs-medium/30
+           transition-colors duration-150;
+  }
+  .select { @apply input appearance-none cursor-pointer; }
+  .badge-pending   { @apply bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-confirmed { @apply bg-cs-olive/15 text-cs-forest text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-arrived   { @apply bg-cs-medium/15 text-cs-medium text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-finished  { @apply bg-gray-100 text-gray-600 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-cancelled { @apply bg-red-100 text-red-700 text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .badge-noshow    { @apply bg-cs-copper/15 text-cs-copper text-xs font-medium px-2.5 py-0.5 rounded-full; }
+}
