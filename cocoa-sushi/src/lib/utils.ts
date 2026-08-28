@@ -1,5 +1,4 @@
 import { type ClassValue, clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
 import { format, parseISO, addMinutes } from 'date-fns'
 import { toZonedTime, formatInTimeZone } from 'date-fns-tz'
 import type { ReservationStatus, TableLocation } from '@/types'
@@ -7,7 +6,7 @@ import type { ReservationStatus, TableLocation } from '@/types'
 export const TZ = 'America/Costa_Rica'
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return clsx(inputs)
 }
 
 // Fecha/hora en zona horaria de CR
