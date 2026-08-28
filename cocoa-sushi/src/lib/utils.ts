@@ -15,7 +15,7 @@ export function nowInCR(): Date {
   return toZonedTime(new Date(), TZ)
 }
 
-export function formatDateCR(date: string | Date, fmt = 'd 'de' MMMM yyyy'): string {
+export function formatDateCR(date: string | Date, fmt = "d 'de' MMMM yyyy"): string {
   const d = typeof date === 'string' ? parseISO(date) : date
   return formatInTimeZone(d, TZ, fmt, { locale: undefined })
 }
